@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: resume-builder-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resumebuilder_db
+    username: resumebuilder_user
+    password: ResumeBuilder@2024!
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000
+  refresh-expiration: 604800000
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
